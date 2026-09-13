@@ -75,7 +75,7 @@ export const getUserBalances = query({
         return {
             youAreOwed, youOwe,
             totalBalance: youAreOwed - youOwe,
-            ownDetails: { youOwe: youOweList, youAreOwed: youAreOwedByList }
+            oweDetails: { youOwe: youOweList, youAreOwed: youAreOwedByList }
         };
 
 
