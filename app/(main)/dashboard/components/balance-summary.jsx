@@ -5,9 +5,9 @@ import { ArrowUpCircle, ArrowDownCircle } from "lucide-react";
 export function BalanceSummary({ balances }) {
   if (!balances) return null;
 
-  const { ownDetails } = balances;
-  const hasOwed = ownDetails.youAreOwed.length > 0;
-  const hasOwing = ownDetails.youOwe.length > 0;
+  const { oweDetails } = balances;
+  const hasOwed = oweDetails.youAreOwed.length > 0;
+  const hasOwing = oweDetails.youOwe.length > 0;
 
   return (
     <div className="space-y-4">
@@ -24,7 +24,7 @@ export function BalanceSummary({ balances }) {
             Owed to you
           </h3>
           <div className="space-y-3">
-            {ownDetails.youAreOwed.map((item) => (
+            {oweDetails.youAreOwed.map((item) => (
               <Link
                 href={`/person/${item.userId}`}
                 key={item.userId}
@@ -53,7 +53,7 @@ export function BalanceSummary({ balances }) {
             You owe
           </h3>
           <div className="space-y-3">
-            {ownDetails.youOwe.map((item) => (
+            {oweDetails.youOwe.map((item) => (
               <Link
                 href={`/person/${item.userId}`}
                 key={item.userId}
